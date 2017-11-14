@@ -1,5 +1,11 @@
 "use strict";
 
+//runs one time per application after the app config
+app.run(function(FIREBASE_CONFIG){
+	firebase.initializeApp(FIREBASE_CONFIG);
+});
+
+
 app.config(function($routeProvider){
 	$routeProvider
 		.when("/auth", {
