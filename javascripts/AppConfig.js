@@ -1,5 +1,11 @@
 "use strict";
 
+//runs one time per application after the app config
+app.run(function(FIREBASE_CONFIG){
+	firebase.initializeApp(FIREBASE_CONFIG);
+});
+
+
 app.config(function($routeProvider){
 	$routeProvider
 		.when("/auth", {
@@ -12,7 +18,7 @@ app.config(function($routeProvider){
 			templateUrl: 'partials/search.html',
 			controller: 'SearchCtrl'
 		})
-		.when("/wishlist", {
+		.when("/mine", {
 			// path to html file and path to javascript file
 			templateUrl: 'partials/wishlist.html',
 			controller: 'WishlistCtrl'

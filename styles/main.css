@@ -1,2 +1,6 @@
 body {
   background-color: #ADD8E6; }
+
+.btn {
+  background-color: transparent;
+  border: none; }
