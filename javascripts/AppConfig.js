@@ -1,8 +1,14 @@
 "use strict";
 
 //runs one time per application after the app config
-app.run(function(FIREBASE_CONFIG){
+app.run(function($rootScope, FIREBASE_CONFIG, tmdbService){
 	firebase.initializeApp(FIREBASE_CONFIG);
+
+	tmdbService.tmdbConfiguration().then((result) => {
+		$rootScope.image_url = result.data.images.base_url;
+	}).catch((error) => {
+		console.log("error in tmdbConfiguration", error);
+	});
 });
 
 
