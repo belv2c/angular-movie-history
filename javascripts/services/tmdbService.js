@@ -6,6 +6,10 @@ app.service("tmdbService", function($http, TMDB_CONFIG){
 
 	};
 
+	const tmdbConfiguration = () => {
+		return $http.get(`https://api.themoviedb.org/3/configuration?api_key=${TMDB_CONFIG}`);
+	};
 
-	return {searchMovies};
+
+	return {searchMovies, tmdbConfiguration};
 });
