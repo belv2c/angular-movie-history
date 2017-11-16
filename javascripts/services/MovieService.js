@@ -45,5 +45,10 @@ const getWishlistMovies = (userUid) => {
 		});
 	};
 
-	return {getRatedMovies, getWishlistMovies};
+
+	const postNewMovie = (newMovie) => {
+		return $http.post(`${FIREBASE_CONFIG.databaseURL}/movies.json`, JSON.stringify(newMovie));
+	};
+
+	return {getRatedMovies, getWishlistMovies, postNewMovie};
 });
