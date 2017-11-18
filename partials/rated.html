@@ -11,7 +11,7 @@
 				<p class="overview">{{movie.overview}}</p>
 				<p>
 					<p>Rating: </p>	
-					<star-rating-comp rating="'3.0'"></star-rating-comp>
+					<star-rating-comp rating="movie.rating" size="'large'" num-of-stars="5" on-click="starChange($event, movie)"></star-rating-comp>
 				</p>
 			</div>
 		</div>
