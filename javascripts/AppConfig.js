@@ -78,6 +78,12 @@ app.config(function($routeProvider){
 			controller: 'RatedCtrl',
 			resolve: '{isAuth}'
 		})
+		.when("/movie/:id", {
+			// path to html file and path to javascript file
+			templateUrl: 'partials/movie_detail.html',
+			controller: 'MovieDetailCtrl',
+			resolve: '{isAuth}'
+		})
 		// if your user tries to type in any other route besides what you've defined you can redirect them
 		.otherwise('/auth');
 });
